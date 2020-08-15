@@ -114,6 +114,8 @@
 				<artifactId>appengine-maven-plugin</artifactId>
 				<version>2.2.0</version>
 				<configuration>
+					<projectId>infinity-285116</projectId>
+					<version>1</version>
 					<devserver.host>0.0.0.0</devserver.host>
 					<devserver.port>8181</devserver.port>
 				</configuration>
