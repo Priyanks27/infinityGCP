@@ -71,7 +71,7 @@
 		<dependency>
 			<groupId>com.google.appengine</groupId>
 			<artifactId>appengine-endpoints</artifactId>
-			<version>1.9.28</version>
+			<version>1.9.53</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -95,7 +95,11 @@
 			<artifactId>maven-site-plugin</artifactId>
 			<version>3.9.1</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.googlecode.objectify</groupId>
+			<artifactId>objectify</artifactId>
+			<version>5.1.3</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -113,6 +117,10 @@
 					<devserver.host>0.0.0.0</devserver.host>
 					<devserver.port>8181</devserver.port>
 				</configuration>
+				<!--<configuration>
+					<devserver.host>0.0.0.0</devserver.host>
+					<devserver.port>8181</devserver.port>
+				</configuration>-->
 			</plugin>
 			<!-- [END cloudplugin] -->
 			<plugin>
