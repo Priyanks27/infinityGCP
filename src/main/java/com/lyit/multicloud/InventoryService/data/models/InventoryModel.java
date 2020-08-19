@@ -3,6 +3,7 @@ package com.lyit.multicloud.InventoryService.data.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
+import java.util.UUID;
 
 import javax.persistence.Table;
 import javax.persistence.Id;
@@ -31,5 +32,4 @@ public class InventoryModel {
 
     private String priceModel;
 
-    }
 }
