@@ -13,7 +13,7 @@ public interface InventoryService {
 
     InventoryModel removeInventory(InventoryModel inventoryModel);
 
-    InventoryModel getInventoryItemById(Long id);
+    InventoryModel getInventoryItemById(UUID id);
 
     List<InventoryModel> getInventoryItemsByCategory(String category);
 

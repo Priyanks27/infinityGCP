@@ -1,16 +1,14 @@
 package com.lyit.multicloud.InventoryService.services.Impl;
 
-
 import com.lyit.multicloud.InventoryService.data.models.InventoryModel;
 import com.lyit.multicloud.InventoryService.repository.InventoryRepository;
 import com.lyit.multicloud.InventoryService.services.InventoryService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class InventoryServiceImpl implements InventoryService {
@@ -44,7 +42,7 @@ public class InventoryServiceImpl implements InventoryService {
     }
 
     @Override
-    public InventoryModel getInventoryItemById(Long id) {
+    public InventoryModel getInventoryItemById(UUID id) {
         Optional<InventoryModel> optionalInventoryModel = inventoryRepository.findById(id);
         if(optionalInventoryModel.isPresent()) return optionalInventoryModel.get();
         else return new InventoryModel();
