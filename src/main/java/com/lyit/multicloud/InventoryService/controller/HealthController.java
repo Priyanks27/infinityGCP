@@ -9,6 +9,6 @@ public class HealthController {
     @GetMapping("/")
     public String health()
     {
-        return "success v1";
+        return "success v2";
     }
 }
