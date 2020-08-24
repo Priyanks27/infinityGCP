@@ -5,6 +5,7 @@ import com.lyit.multicloud.InventoryService.services.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 public class InventoryController {
@@ -23,7 +24,7 @@ public class InventoryController {
     }
 
     @GetMapping("/inventory/{id}")
-    public InventoryModel getInventoryItemById(@PathVariable Long id) {
+    public InventoryModel getInventoryItemById(@PathVariable UUID id) {
      return inventoryService.getInventoryItemById(id);
     }
 
@@ -32,13 +33,8 @@ public class InventoryController {
         return inventoryService.getAllInventoryItems();
     }
 
-    @GetMapping("/inventory/category/{category}")
+    @GetMapping("/inventory/{category}")
     public List<InventoryModel> getInventoryItemsByCategory(@PathVariable String category) {
         return inventoryService.getInventoryItemsByCategory(category);
-    }
-
-    @GetMapping("/inventory/name/{name}")
-    public List<InventoryModel> getInventoryItemsByInventoryName(@PathVariable String name) {
-        return inventoryService.getInventoryItemsByInventoryName(name);
     }
 }
