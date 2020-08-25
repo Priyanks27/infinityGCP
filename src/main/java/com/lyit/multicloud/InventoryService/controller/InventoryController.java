@@ -1,13 +1,11 @@
 package com.lyit.multicloud.InventoryService.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lyit.multicloud.InventoryService.data.models.InventoryModel;
-import com.lyit.multicloud.InventoryService.data.models.InventoryModelList;
 import com.lyit.multicloud.InventoryService.services.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 public class InventoryController {
@@ -17,13 +15,6 @@ public class InventoryController {
 
     @PostMapping("/inventory")
     public InventoryModel addInventory(@RequestBody InventoryModel inventoryModel) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        String json = "";
-        try {
-            InventoryModel inventoryModel1 = objectMapper.readValue(json, InventoryModel.class);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
         return inventoryService.addInventory(inventoryModel);
     }
 
@@ -33,25 +24,17 @@ public class InventoryController {
     }
 
     @GetMapping("/inventory/{id}")
-    public InventoryModel getInventoryItemById(@PathVariable Long id) {
+    public InventoryModel getInventoryItemById(@PathVariable UUID id) {
      return inventoryService.getInventoryItemById(id);
     }
 
     @GetMapping("/inventory")
-    public InventoryModelList getAllInventoryItems() {
-        List<InventoryModel> inventoryModels = inventoryService.getAllInventoryItems();
-        InventoryModelList inventoryModelList = new InventoryModelList();
-        inventoryModelList.setInventoryModelList(inventoryModels);
-        return inventoryModelList;
+    public List<InventoryModel> getAllInventoryItems() {
+        return inventoryService.getAllInventoryItems();
     }
 
-    @GetMapping("/inventory/category/{category}")
+    @GetMapping("/inventory/{category}")
     public List<InventoryModel> getInventoryItemsByCategory(@PathVariable String category) {
         return inventoryService.getInventoryItemsByCategory(category);
-    }
-
-    @GetMapping("/inventory/name/{name}")
-    public List<InventoryModel> getInventoryItemsByInventoryName(@PathVariable String name) {
-        return inventoryService.getInventoryItemsByInventoryName(name);
     }
 }
