@@ -9,6 +9,12 @@ public class HealthController {
     @GetMapping("/")
     public String health()
     {
-       return "success";
+        return "success";
+    }
+
+    @GetMapping("/health")
+    public String health1()
+    {
+        return "success form generic controller!";
     }
 }

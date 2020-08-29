@@ -1,35 +1,31 @@
 package com.lyit.multicloud.InventoryService.data.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.ToString;
-import java.util.UUID;
-
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Entity;
 import lombok.*;
+import javax.persistence.*;
 
-@Table
-@Entity
-@ToString
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@Entity
+@Table(name="InventoryModel")
 public class InventoryModel {
 
     @Id
     @GeneratedValue
-    private UUID id;
+    private Long id;
+
+    @Column(name = "category")
     private String category;
 
+    @Column(name = "inventoryName")
     private String inventoryName;
 
+    @Column(name = "inventoryCount")
     private String inventoryCount;
 
+    @Column(name = "priceModel")
     private String priceModel;
-
 }
