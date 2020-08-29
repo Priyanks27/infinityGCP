@@ -9,12 +9,12 @@ public class HealthController {
     @GetMapping("/")
     public String health()
     {
-        return "success";
+       return "success controller from Cassandra";
     }
 
     @GetMapping("/health")
-    public String health1()
+    public String healthCheck()
     {
-        return "success form generic controller!";
+        return "success test 1";
     }
 }
