@@ -13,9 +13,11 @@ public interface InventoryService {
 
     InventoryModel removeInventory(InventoryModel inventoryModel);
 
-    InventoryModel getInventoryItemById(UUID id);
+    InventoryModel getInventoryItemById(Long id);
 
     List<InventoryModel> getInventoryItemsByCategory(String category);
+
+    public List<InventoryModel> getInventoryItemsByInventoryName(String inventoryName);
 
     List<InventoryModel> getAllInventoryItems();
 }
