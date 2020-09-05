@@ -11,10 +11,4 @@ public class HealthController {
     {
         return "success";
     }
-
-    @GetMapping("/health")
-    public String health1()
-    {
-        return "success form generic controller!";
-    }
 }
